@@ -9,7 +9,7 @@ var express_app = express();
 // Create a 1 hour cache for storing user devices
 var cache = new nodecache({ stdTTL: 3600, checkperiod: 120 });
 // Create instance of alexa-app
-var app = new alexa.app('connect');
+var app = new alexa.app('alexa');
 // Bind alexa-app to express instance
 app.express({ expressApp: express_app });
 
@@ -20,7 +20,7 @@ i18n.configure({
 // Run every time the skill is accessed
 app.pre = function (req, res, type) {
     const applicationId = require('./package.json').alexa.applicationId;
-    i18n.setLocale(req.data.request.locale || "en-GB");
+    i18n.setLocale(req.data.request.locale || "it-IT");
     // Error if the application ID of the request is not for this skill
     if (req.applicationId != applicationId &&
         req.getSession().details.application.applicationId != applicationId) {
@@ -510,7 +510,7 @@ app.intent('GetTrackIntent', {
 express_app.use(express.static(__dirname));
 /* istanbul ignore next */
 express_app.get('/', function (req, res) {
-    res.redirect('https://github.com/thorpelawrence/alexa-spotify-connect');
+    res.redirect('https://github.com/simoberny/alexa-spotify-connect');
 });
 
 /* istanbul ignore if */
