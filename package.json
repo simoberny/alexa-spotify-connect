@@ -32,7 +32,7 @@
     "url": "git+https://github.com/simoberny/alexa-spotify-connect.git"
   },
   "alexa": {
-    "applicationId": "amzn1.ask.skill.0c714c97-8aed-4f63-915e-1dc69bad9b01"
+    "applicationId": "amzn1.ask.skill.893f8558-b899-463a-8c6c-43faa97894bb"
   },
   "jest": {
     "coverageReporters": [
