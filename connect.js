@@ -19,6 +19,7 @@ i18n.configure({
 
 // Run every time the skill is accessed
 app.pre = function (req, res, type) {
+    console.log("Accesso!");
     const applicationId = require('./package.json').alexa.applicationId;
     i18n.setLocale(req.data.request.locale || "it-IT");
     // Error if the application ID of the request is not for this skill
